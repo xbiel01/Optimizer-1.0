@@ -1,1 +1,78 @@
-# Optimizer 1.0 🚀 O **Optimizer 1.0** é uma aplicação desktop desenvolvida em Python para otimização, manutenção, diagnóstico e gerenciamento de ambientes Windows. A ferramenta conta com interface gráfica moderna e responsiva (CustomTkinter), monitoramento de hardware em tempo real, gerenciador de processos, ferramentas de rede com teste de velocidade, desinstalador de *bloatwares*, instalador de softwares e utilitários de reparo do sistema. --- ## 🛠️ Pré-requisitos e Dependências Para executar o projeto diretamente através do código-fonte (sem o executável compilado), é necessário ter o **Python 3.9+** instalado na máquina. ### 📦 Bibliotecas Python Necessárias Analisando o código do sistema, as seguintes bibliotecas de terceiros devem ser instaladas: | Biblioteca | Comando de Instalação | Finalidade no App | | :--- | :--- | :--- | | **CustomTkinter** | `pip install customtkinter` | Interface gráfica (GUI) moderna baseada em Tkinter | | **Pillow (PIL)** | `pip install Pillow` | Manipulação e exibição de imagens e ícones PNG/ICO | | **Matplotlib** | `pip install matplotlib` | Renderização dos gráficos circular e velocímetros | | **NumPy** | `pip install numpy` | Cálculos matemáticos para geração dos gráficos vetoriais | | **Psutil** *(módulo comum em `system_tools`)* | `pip install psutil` | Leitura de métricas do sistema (CPU, RAM, Disco e Processos) | | **Speedtest-cli** *(módulo comum em `system_tools`)* | `pip install speedtest-cli` | Execução dos testes de velocidade de rede | ### ⚡ Comando Único para Instalação dos Módulos Você pode instalar todas as dependências rodando o seguinte comando no terminal (CMD ou PowerShell): ```bash pip install customtkinter Pillow matplotlib numpy psutil speedtest-cli ``` *(Ou via arquivo `requirements.txt` se disponível no repositório: `pip install -r requirements.txt`)* --- ## 📁 Estrutura de Arquivos Recomendada Para que a aplicação funcione corretamente, certifique-se de manter os módulos auxiliares e arquivos de mídia organizados na mesma pasta: ```text Optimizer/ ├── main.py # Script principal da aplicação ├── styles.py # Definições de cores, fontes e dimensões ├── system_tools.py # Módulo com comandos de sistema, métricas e automações ├── meu_icone.ico # Ícone principal da janela └── assets/ # Pasta com imagens e ícones da interface ├── logo.png ├── dashboard.png ├── otimiza.png ├── diag.png ├── admin.png ├── cmd.png ├── install.png ├── startup.png └── rede.png ``` --- ## 🚀 Como Executar a Aplicação 1. Abra o **Prompt de Comando (CMD)**, **PowerShell** ou o **Terminal do VS Code**. 2. Navegue até a pasta do projeto: ```bash cd caminho/para/a/pasta/Optimizer ``` 3. Execute o script principal: ```bash python main.py ``` --- ## ⚙️ Permissões e Recomendações (Importante) > ⚠️ **Atenção:** Como o **Optimizer 1.0** executa tarefas administrativas do Windows (como reparo de arquivos de sistema via `SFC`/`DISM`, limpeza de arquivos de cache do sistema, desinstalação de aplicativos nativos e alteração de planos de energia), **é altamente recomendado executar o terminal como Administrador** no Windows antes de rodar o programa. --- ## 📊 Principais Módulos do Sistema 1. **Início (Dashboard):** Monitoramento em tempo real de CPU, RAM e HD com gráficos circulares interativos e tabela dos maiores consumidores de memória RAM. 2. **Otimizações:** Troca de plano de energia para Alto Desempenho, desativação de telemetria do Windows, limpeza de temporários e remoção de bloatwares nativos. 3. **Diagnóstico:** Verificação de integridade do SO via DISM/SFC, coleta de eventos críticos no Event Viewer e atualização automática de softwares via `Winget`. 4. **Gerenciador de Startup:** Listagem e desativação de programas que iniciam junto com o Windows através do Registro. 5. **Central CMD e Ferramentas Admin:** Atalhos rápidos para utilitários administrativos do Windows (`diskmgmt.msc`, `services.msc`, `regedit`, `ipconfig`, etc.). 6. **Instaladores:** Instalação automatizada e em lote de softwares essenciais (Chrome, Acrobat, WinRAR, AnyDesk, VLC, etc.) via Winget. 7. **Rede:** Teste de velocidade (Speedtest) com animação de ponteiro em tempo real e gráficos de Download/Upload. --- ## 👤 Autor Desenvolvido por **Gabriel Melo** © 2026.
+# Optimizer 1.0 🚀
+
+O **Optimizer 1.0** é uma aplicação desktop desenvolvida em Python para otimização, manutenção, diagnóstico e gerenciamento de ambientes Windows. A ferramenta conta com interface gráfica moderna e responsiva (CustomTkinter), monitoramento de hardware em tempo real, gerenciador de processos, ferramentas de rede com teste de velocidade, desinstalador de *bloatwares*, instalador de softwares e utilitários de reparo do sistema.
+
+---
+
+## 🛠️ Pré-requisitos e Dependências
+
+Para executar o projeto diretamente através do código-fonte (sem o executável compilado), é necessário ter o **Python 3.9+** instalado na máquina.
+
+### 📦 Bibliotecas Python Necessárias
+
+Analisando o código do sistema, as seguintes bibliotecas de terceiros devem ser instaladas:
+
+| Biblioteca | Comando de Instalação | Finalidade no App |
+| :--- | :--- | :--- |
+| **CustomTkinter** | `pip install customtkinter` | Interface gráfica (GUI) moderna baseada em Tkinter |
+| **Pillow (PIL)** | `pip install Pillow` | Manipulação e exibição de imagens e ícones PNG/ICO |
+| **Matplotlib** | `pip install matplotlib` | Renderização dos gráficos circular e velocímetros |
+| **NumPy** | `pip install numpy` | Cálculos matemáticos para geração dos gráficos vetoriais |
+| **Psutil** | `pip install psutil` | Leitura de métricas do sistema (CPU, RAM, Disco e Processos) |
+| **Speedtest-cli** | `pip install speedtest-cli` | Execução dos testes de velocidade de rede |
+
+### ⚡ Comando Único para Instalação das Dependências
+
+Você pode instalar todas as dependências rodando o seguinte comando no terminal (CMD ou PowerShell):
+
+```bash
+pip install customtkinter Pillow matplotlib numpy psutil speedtest-cli
+
+📁 Estrutura de Arquivos Recomendada
+Para que a aplicação funcione corretamente, certifique-se de manter os módulos auxiliares e arquivos de mídia organizados na mesma pasta:
+
+Optimizer/
+├── main.py              # Script principal da aplicação
+├── styles.py            # Definições de cores, fontes e dimensões
+├── system_tools.py      # Módulo com comandos de sistema, métricas e automações
+├── meu_icone.ico        # Ícone principal da janela
+└── assets/              # Pasta com imagens e ícones da interface
+    ├── logo.png
+    ├── dashboard.png
+    ├── otimiza.png
+    ├── diag.png
+    ├── admin.png
+    ├── cmd.png
+    ├── install.png
+    ├── startup.png
+    └── rede.png
+
+🚀 Como Executar a Aplicação
+Abra o Prompt de Comando (CMD), PowerShell ou o Terminal do VS Code.
+
+Navegue até a pasta do projeto:
+cd caminho/para/a/pasta/Optimizer
+
+Execute o script principal:
+python main.py
+
+⚙️ Permissões e Recomendações (Importante)
+⚠️ Atenção: Como o Optimizer 1.0 executa tarefas administrativas do Windows (como reparo de arquivos de sistema via SFC/DISM, limpeza de arquivos de cache do sistema, desinstalação de aplicativos nativos e alteração de planos de energia), é altamente recomendado executar o terminal como Administrador no Windows antes de rodar o programa.
+
+📊 Principais Módulos do Sistema
+Início (Dashboard): Monitoramento em tempo real de CPU, RAM e HD com gráficos circulares interativos e tabela dos maiores consumidores de memória RAM.
+
+Otimizações: Troca de plano de energia para Alto Desempenho, desativação de telemetria do Windows, limpeza de temporários e remoção de bloatwares nativos.
+
+Diagnóstico: Verificação de integridade do SO via DISM/SFC, coleta de eventos críticos no Event Viewer e atualização automática de softwares via Winget.
+
+Gerenciador de Startup: Listagem e desativação de programas que iniciam junto com o Windows através do Registro.
+
+Central CMD e Ferramentas Admin: Atalhos rápidos para utilitários administrativos do Windows (diskmgmt.msc, services.msc, regedit, ipconfig, etc.).
+
+Instaladores: Instalação automatizada e em lote de softwares essenciais (Chrome, Acrobat, WinRAR, AnyDesk, VLC, etc.) via Winget.
+
+Rede: Teste de velocidade (Speedtest) com animação de ponteiro em tempo real e gráficos de Download/Upload.
+
+👤 Autor
+Desenvolvido por Gabriel Melo © 2026.
