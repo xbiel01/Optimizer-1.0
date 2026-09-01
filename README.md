@@ -24,12 +24,11 @@ Analisando o código do sistema, as seguintes bibliotecas de terceiros devem ser
 ### ⚡ Comando Único para Instalação das Dependências
 
 Você pode instalar todas as dependências rodando o seguinte comando no terminal (CMD ou PowerShell):
-|```bash
-pip install customtkinter Pillow matplotlib numpy psutil speedtest-cli |
+bash
+```pip install customtkinter Pillow matplotlib numpy psutil speedtest-cli```
 
 
-
-📁 Estrutura de Arquivos Recomendada
+|📁 Estrutura de Arquivos Recomendada
 Para que a aplicação funcione corretamente, certifique-se de manter os módulos auxiliares e arquivos de mídia organizados na mesma pasta:
 
 Optimizer/
