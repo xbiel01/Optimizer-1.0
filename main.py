@@ -155,12 +155,21 @@ class OptimizerApp(ctk.CTk):
             for btn in self.botoes_menu.values(): 
                 btn.configure(text="")
 
-    def carregar_icone(self, nome_arquivo, size=(20, 20)):
+    def carregar_icone(self, nome_arquivo, size=(20, 20), manter_proporcao=False):
         caminho = obter_caminho_recurso(os.path.join("assets", nome_arquivo))
         if os.path.exists(caminho):
             try:
                 img = Image.open(caminho)
-                return ctk.CTkImage(light_image=img, dark_image=img, size=size)
+                
+                if manter_proporcao:
+                    # Redimensiona mantendo a proporção exata dentro do limite de altura/largura
+                    img_ratio = img.copy()
+                    img_ratio.thumbnail(size, Image.Resampling.LANCZOS)
+                    tamanho_final = img_ratio.size
+                else:
+                    tamanho_final = size
+                    
+                return ctk.CTkImage(light_image=img, dark_image=img, size=tamanho_final)
             except Exception: 
                 pass
         return None
