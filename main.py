@@ -53,8 +53,8 @@ class OptimizerApp(ctk.CTk):
         self.btn_toggle.pack(anchor="e", padx=15, pady=(15, 0))
 
         # --- LOGO E BRANDING CORPORATIVO NA SIDEBAR ---
-        self.logo_img = self.carregar_icone("logo.png", size=(120, 32))
-        self.logo_icone_sm = self.carregar_icone("logo.png", size=(28, 28))
+        self.logo_img = self.carregar_icone("logo.png", size=(180, 40), manter_proporcao=True)
+        self.logo_icone_sm = self.carregar_icone("logo.png", size=(28, 28), manter_proporcao=True)
         
         self.lbl_logo = ctk.CTkLabel(
             self.sidebar_frame, 
